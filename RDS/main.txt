@@ -1,3 +1,21 @@
 Create the provider file
 
 Use the rds.tf to setup your database(mysql)
+
+terraform --version
+
+
+- Initialize terraform
+    terraform init
+
+- Validate terraform
+    terraform validate
+
+- Format the script
+    terraform fmt
+
+- Get the preview using plan
+    terraform plan
+
+- Apply the configuration
+    terraform apply
