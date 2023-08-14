@@ -3,7 +3,7 @@
    storage_type        = "gp2"
    identifier          = "rdstf"
    engine              = "mysql"
-   engine_version      = "8.0.27"
+   engine_version      = "8.0.33"
    instance_class      = "db.t2.micro"
    username            = "admin"
    password            = "Passw0rd!123"
