@@ -1,0 +1,11 @@
+
+- cidr_block:
+    This specifies the IP address range for your VPC. The VPC will have an IP address range of
+    "10.0.0.0/16".
+
+- tags:
+    This is a map of key-value pairs used for tagging resources in AWS.
+    In this case, I am tagging the VPC with a single tag where the key is "Name" and the value is "Prophius-VPC".
+    This tag can help you identify and manage your resources more easily.
+
+

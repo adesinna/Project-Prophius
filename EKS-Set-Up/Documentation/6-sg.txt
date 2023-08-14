@@ -1,0 +1,43 @@
+1. Resource Type: aws_security_group
+   This specifies that you're creating an AWS security group.
+
+2. Resource Name: allow_tls
+   This is the name you've given to the security group resource.
+
+3. Attributes:
+   - name: "allow_tls"
+     This is the name of the security group.
+   - description: "Allow TLS inbound traffic"
+     A description to indicate the purpose of the security group.
+   - vpc_id: aws_vpc.main.id
+     This attribute specifies the VPC (Virtual Private Cloud) ID in which the security group will be created. The aws_vpc.main.id refers to the ID of a VPC resource previously defined in your Terraform configuration.
+
+4. Ingress Rule:
+   Ingress rules control incoming traffic.
+   - description: "TLS from VPC"
+     Description for this ingress rule.
+   - from_port: 22
+     The starting port of the allowed traffic range. In this case, port 22 is used for SSH traffic.
+   - to_port: 22
+     The ending port of the allowed traffic range, which is also 22 in this case.
+   - protocol: "tcp"
+     The protocol for the allowed traffic. Here, "tcp" represents the Transmission Control Protocol.
+   - cidr_blocks: ["0.0.0.0/0"]
+     The IP range (in CIDR notation) from which the incoming traffic is allowed. 0.0.0.0/0 allows traffic from any IP address, which is generally not recommended due to security concerns.
+
+5. Egress Rule:
+   Egress rules control outgoing traffic.
+   - from_port: 0
+     The starting port of the allowed egress traffic range. A value of 0 means all ports.
+   - to_port: 0
+     The ending port of the allowed egress traffic range, also set to 0 to cover all ports.
+   - protocol: "-1"
+     The protocol for the egress traffic. Here, "-1" represents all protocols.
+   - cidr_blocks: ["0.0.0.0/0"]
+     Similar to the ingress rule, this allows all outgoing traffic to any IP address.
+
+6. Tags:
+   Tags are metadata labels that can be applied to AWS resources.
+   - Name: "allow_tls"
+     A tag with the key "Name" and the value "allow_tls" is applied to the security group.
+

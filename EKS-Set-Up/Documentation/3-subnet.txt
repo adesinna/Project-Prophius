@@ -1,0 +1,9 @@
+Public Subnet 1 (aws_subnet resource "public-1"):
+   - vpc_id: The ID of the VPC in which the subnet will be created.
+   - cidr_block: The IP address range for the subnet.
+   - availability_zone: The availability zone in which the subnet will be created.
+   - map_public_ip_on_launch: This attribute enables automatic public IP assignment to instances launched in this subnet.
+   - tags: Tags are metadata associated with resources. Here, you've assigned the tag "Name" with the value "public-sub-1".
+
+Public Subnet 2 (aws_subnet resource "public-2"):
+   - Similar to the first subnet, with different values for cidr_block, availability_zone, and the "Name" tag.

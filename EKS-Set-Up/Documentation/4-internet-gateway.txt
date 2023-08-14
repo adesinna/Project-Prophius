@@ -1,0 +1,4 @@
+Internet Gateway Creation (aws_internet_gateway resource "gw"):
+   - vpc_id: The ID of the VPC to which the internet gateway will be attached.
+   - tags: Tags are used to add metadata to resources. Here, I am assigning the tag "Name" with the value "main"
+           to the internet gateway.

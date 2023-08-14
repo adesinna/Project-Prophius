@@ -1,0 +1,57 @@
+1. EC2 Instance Resource (aws_instance.kubectl-server):
+   This resource defines the creation and configuration of an Amazon EC2 instance that can be used to run kubectl commands.
+
+   - ami: "ami-0f8e81a3da6e2510a"
+     The ID of the Amazon Machine Image (AMI) for the EC2 instance.
+
+   - key_name: "kube-demo"
+     The name of the EC2 key pair to use for SSH access.
+
+   - instance_type: "t2.micro"
+     The instance type for the EC2 instance.
+
+   - associate_public_ip_address: true
+     Associates a public IP address with the instance for external access.
+
+   - subnet_id: aws_subnet.public-1.id
+     The subnet ID where the EC2 instance will be launched.
+
+   - vpc_security_group_ids: [aws_security_group.allow_tls.id]
+     The security group(s) to associate with the EC2 instance.
+
+   - tags: Tags to label the EC2 instance.
+
+2. EKS Node Group Resource (aws_eks_node_group.node-grp):
+   This resource defines the creation and configuration of an EKS node group.
+
+   - cluster_name: aws_eks_cluster.eks.name
+     The name of the EKS cluster to which the node group belongs.
+
+   - node_group_name: "prophius-node-group"
+     The name of the EKS node group.
+
+   - node_role_arn: aws_iam_role.worker.arn
+     The IAM role for the EKS nodes.
+
+   - subnet_ids: [aws_subnet.public-1.id, aws_subnet.public-2.id]
+     The subnet IDs in which the EKS nodes will be launched.
+
+   - capacity_type: "ON_DEMAND"
+     Specifies that the nodes will be launched as On-Demand instances.
+
+   - disk_size: "20"
+     The size of the root block device for instances in the node group.
+
+   - instance_types: ["t2.small"]
+     The allowed instance types for the EKS nodes.
+
+   - remote_access: Configuration for remote access to nodes.
+
+   - labels: Labels to apply to the EKS nodes.
+
+   - scaling_config: Configuration for scaling the node group.
+
+   - update_config: Configuration for updates to the node group.
+
+   - depends_on: Lists dependencies for creating the node group.
+

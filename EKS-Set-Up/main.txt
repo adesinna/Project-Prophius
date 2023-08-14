@@ -48,3 +48,4 @@ i. Install aws cli and kubectl check server_installer.sh
     aws eks --region us-west-1 describe-cluster --name prophius-eks --query cluster.status
 
     aws eks --region us-west-1 update-kubeconfig --name prophius-eks
+

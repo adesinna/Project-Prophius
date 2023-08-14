@@ -1,0 +1,29 @@
+1. EKS Master Role (aws_iam_role.master):
+   This IAM role is meant to be assumed by the EKS service to manage the EKS cluster.
+
+2. EKS Master Role Policies (aws_iam_role_policy_attachment):
+   - AmazonEKSClusterPolicy: Allows the EKS service to manage the cluster.
+   - AmazonEKSServicePolicy: Allows the EKS service to interact with other AWS services required to manage the cluster.
+   - AmazonEKSVPCResourceController: Allows the EKS service to manage VPC resources in the cluster.
+
+3. EKS Worker Role (aws_iam_role.worker):
+   This IAM role is meant to be assumed by EC2 instances running as EKS worker nodes.
+
+4. Custom Autoscaler Policy (aws_iam_policy.autoscaler):
+   Defines a custom IAM policy that grants permissions related to autoscaling EKS resources and EC2 instances.
+
+5. Worker Role Policies (aws_iam_role_policy_attachment):
+   - AmazonEKSWorkerNodePolicy: Provides permissions for worker nodes to interact with the EKS control plane.
+   - AmazonEKS_CNI_Policy: Allows worker nodes to manage CNI (Container Network Interface) related tasks.
+   - AmazonSSMManagedInstanceCore: Grants access for Systems Manager on worker nodes.
+   - AmazonEC2ContainerRegistryReadOnly: Allows read-only access to the ECR (Elastic Container Registry) for pulling container images.
+   - AWSXRayDaemonWriteAccess: Provides access for X-Ray tracing capabilities.
+   - AmazonS3ReadOnlyAccess: Allows read-only access to Amazon S3 buckets.
+   - autoscaler: Attaches the custom autoscaler policy defined earlier.
+
+6. Worker Instance Profile (aws_iam_instance_profile.worker):
+   Defines an IAM instance profile, which associates the worker IAM role with EC2 instances running in the EKS worker nodes.
+   This allows the instances to assume the worker role and access the necessary resources.
+
+The IAM roles, policies, and instance profiles defined in this code are crucial for setting up and managing EKS clusters
+and their worker nodes. They ensure that the right permissions are granted to the EKS service and worker nodes for seamless cluster operation.

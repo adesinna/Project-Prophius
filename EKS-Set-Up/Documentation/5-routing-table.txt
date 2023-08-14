@@ -1,0 +1,17 @@
+
+1. Route Table Creation (aws_route_table resource "rtb"):
+   - vpc_id: Specifies the ID of the VPC to which the route table will be associated.
+   - route: Defines a route entry. In this case, you're creating a default route (0.0.0.0/0) that points to the internet gateway (aws_internet_gateway.gw).
+   - tags: Assigns the "Name" tag with the value "MyRoute" to the route table.
+
+2. Route Table Association for Public Subnet 1 (aws_route_table_association resource "a-1"):
+   - subnet_id: Specifies the ID of the subnet to associate with the route table.
+   - route_table_id: Specifies the ID of the route table to associate with the subnet.
+
+3. Route Table Association for Public Subnet 2 (aws_route_table_association resource "a-2"):
+   - Similar to the first association but with different subnet ID.
+
+With these associations, both public-1 and public-2 subnets are associated with the same route table (aws_route_table.rtb).
+The route table contains a default route that directs traffic destined for any IP address (0.0.0.0/0) to the internet gateway
+ (aws_internet_gateway.gw). This setup is commonly used for public subnets to provide internet connectivity to resources within those subnets.
+

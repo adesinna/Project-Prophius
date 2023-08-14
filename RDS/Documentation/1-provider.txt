@@ -1,0 +1,10 @@
+1. Terraform Block with Required Providers:
+   - The terraform block is used to set configuration options for Terraform itself.
+   - In this block, I am specifying that your configuration requires the AWS provider to be used.
+   - The required_providers block is used to specify the provider's source and version.
+
+
+2. Provider Configuration (provider "aws"):
+   - The provider block is used to configure the AWS provider.
+   - The region parameter is set to "us-west-1", which means that any resources you define under this provider
+     will be created in the US West (N. California) region.

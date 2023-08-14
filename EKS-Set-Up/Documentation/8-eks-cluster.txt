@@ -1,0 +1,23 @@
+1. EKS Cluster Resource (aws_eks_cluster.eks):
+   This resource defines the creation and configuration of an EKS cluster.
+
+   - name: "prophius-eks"
+     The name of the EKS cluster.
+
+   - role_arn: aws_iam_role.master.arn
+     The Amazon Resource Name (ARN) of the IAM role you've defined earlier that the EKS cluster assumes. This role has the necessary permissions to manage the cluster.
+
+   - vpc_config:
+     This block defines the networking configuration for the EKS cluster.
+
+     - subnet_ids: [aws_subnet.public-1.id, aws_subnet.public-2.id]
+       A list of subnet IDs from your AWS Virtual Private Cloud (VPC) where you want to deploy the EKS cluster. These subnets should ideally span multiple availability zones for high availability.
+
+2. depends_on:
+   This attribute lists resources that the EKS cluster depends on before it's created. These dependencies ensure that the IAM role policies are attached before creating the EKS cluster.
+
+   - aws_iam_role_policy_attachment.AmazonEKSClusterPolicy: The IAM policy attachment that grants permissions for the EKS cluster.
+   - aws_iam_role_policy_attachment.AmazonEKSServicePolicy: The IAM policy attachment that grants permissions for the EKS service.
+   - aws_iam_role_policy_attachment.AmazonEKSVPCResourceController: The IAM policy attachment for VPC resource management.
+
+

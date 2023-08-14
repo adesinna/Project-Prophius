@@ -1,0 +1,35 @@
+1. RDS Instance Resource (aws_db_instance.myrds):
+   This resource defines the creation and configuration of an Amazon RDS instance.
+
+   - allocated_storage: 20
+     The amount of storage allocated for the RDS instance, in gibibytes (GiB).
+
+   - storage_type: "gp2"
+     The storage type for the RDS instance. In this case, it's General Purpose SSD (gp2).
+
+   - identifier: "rdstf"
+     A unique identifier for the RDS instance.
+
+   - engine: "mysql"
+     The database engine to be used for the RDS instance. In this case, MySQL.
+
+   - engine_version: "8.0.33"
+     The version of the MySQL database engine to be used.
+
+   - instance_class: "db.t2.micro"
+     The instance type for the RDS instance.
+
+   - username: "admin"
+     The username for the database.
+
+   - password: "Passw0rd!123"
+     The password for the database user.
+
+   - publicly_accessible: true
+     Specifies whether the RDS instance should have a public IP address and be accessible over the internet.
+
+   - skip_final_snapshot: true
+     Indicates whether a final DB snapshot is created before the DB instance is deleted.
+
+   - tags: Tags to label the RDS instance.
+
