@@ -1,0 +1,41 @@
+This project assumes that you've set up terraform, IAM user and kubectl in your instance
+
+1. Set up provider.tf
+
+2. Create a VPC using vpc.tf
+
+3. Create a subnet in that vpc, using subnet.tf
+
+4. Internet gateway for the VPC using igw.tf
+
+5. Create route table for the subnets using rout.tf
+
+6. Create the sg using sg.tf
+
+7. IAM Role for EKS cluster iam_role.tf
+
+8. Create the EKS Cluster using eks_cluster.tf
+
+9. Create node group and an ec2 instance where you can use kubectl to access your worker nodes, using eks_node_group.tf
+
+
+terraform --version
+
+
+- Initialize terraform
+    terraform init
+
+- Validate terraform
+    terraform validate
+
+- Format the script
+    terraform fmt
+
+- Get the preview using plan
+    terraform plan
+
+- Apply the configuration
+    terraform apply
+
+- To destroy
+    terraform destroy
