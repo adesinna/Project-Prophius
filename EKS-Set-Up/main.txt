@@ -1,4 +1,4 @@
-This project assumes that you've set up terraform, IAM user and kubectl in your instance
+Setting Up the cluster
 
 1. Set up provider.tf
 
@@ -39,3 +39,12 @@ terraform --version
 
 - To destroy
     terraform destroy
+
+
+Next, we go to the kubectl server
+
+i. Install aws cli and kubectl check server_installer.sh
+
+    aws eks --region us-west-1 describe-cluster --name prophius-eks --query cluster.status
+
+    aws eks --region us-west-1 update-kubeconfig --name prophius-eks
