@@ -1,0 +1,3 @@
+This is the equivalent of dockerhub for aws
+
+1. Create your provider.tf

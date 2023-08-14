@@ -1,0 +1,3 @@
+Create the provider file
+
+Use the rds.tf to setup your database(mysql)
