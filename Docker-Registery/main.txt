@@ -3,3 +3,9 @@
 2.Create docker.tf
 
 3. Use the script.sh to install docker!
+
+4. docker login (using your credentials)
+
+5. Then use the nginx to test it
+
+build the image and push to docker hub
