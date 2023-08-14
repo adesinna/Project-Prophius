@@ -1,6 +1,0 @@
-This is the equivalent of dockerhub for aws
-
-1. Create your provider.tf
-
-
-2. Create both ecr.tf and variables.tf

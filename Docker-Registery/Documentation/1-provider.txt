@@ -1,0 +1,9 @@
+
+1. The first `provider "docker"` block is configuring the local Docker daemon provider. It specifies the communication
+ protocol and path to the Docker socket (`unix:///var/run/docker.sock`). This allows Terraform to manage Docker resources
+  on the local machine.
+
+2. The second `provider "docker"` block uses an alias (`registry`) to configure a Docker provider for interacting with a
+    Docker registry. It's using the Docker Hub registry (`https://index.docker.io/v1/`) and sets up authentication for pulling
+    and pushing images to the registry.
+

@@ -1,0 +1,14 @@
+1. docker_registry_repository:
+This is a Terraform resource type provided by the Docker provider.
+It allows you to define and manage Docker repositories in a Docker registry.
+
+2. my_private_repo:
+This is the name you're giving to the resource instance.
+You can refer to this instance using this name in other parts of your Terraform configuration.
+
+3. name: This parameter specifies the name of the Docker repository you want to create.
+
+4. provider: This parameter specifies the provider alias you defined earlier in your configuration.
+
+5. visibility: This parameter sets the visibility of the repository. It's set to "private", which means the repository will only be accessible to authorized users. Other possible values include "public" and "protected".
+
